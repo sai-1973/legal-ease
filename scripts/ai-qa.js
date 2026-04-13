@@ -26,7 +26,11 @@ async function sendQuestion() {
   const loadingMsg = addMessage("Thinking...", "loading");
 
   try {
-    const response = await fetch("http://localhost:3000/api/ask", {
+    const apiUrl = window.location.hostname === "localhost"
+      ? "http://localhost:3000/api/ask"
+      : "/api/ask";
+
+    const response = await fetch(apiUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ question })
