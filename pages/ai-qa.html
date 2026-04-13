@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Legal Q&A — Legal-Ease</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="../styles/ai-qa.css" />
+</head>
+<body>
+
+  <header>
+    <h1><a href="../index.html" style="color:white;text-decoration:none">Legal-Ease</a></h1>
+    <nav>
+      <a href="faq.html">Legal FAQs</a>
+      <a href="draft-generator.html">Draft a Document</a>
+      <a href="ai-qa.html">AI Q&amp;A</a>
+    </nav>
+  </header>
+
+  <main class="qa-container">
+    <h2 class="qa-title">AI Legal Assistant</h2>
+    <p class="qa-subtitle">Ask any legal question in plain language. Powered by Claude AI.</p>
+
+    <div class="disclaimer">
+      This tool provides general legal information only — not legal advice.
+      Always consult a qualified lawyer for serious matters.
+    </div>
+
+    <div class="suggestion-chips">
+      <button class="chip" onclick="askSuggestion(this)">What should I do if police refuse to file my FIR?</button>
+      <button class="chip" onclick="askSuggestion(this)">How do I apply for bail?</button>
+      <button class="chip" onclick="askSuggestion(this)">What are my rights if I am arrested?</button>
+      <button class="chip" onclick="askSuggestion(this)">How do I file an RTI application?</button>
+    </div>
+
+    <div id="chat-window"></div>
+
+    <div class="input-row">
+      <textarea
+        id="user-input"
+        placeholder="Type your legal question here..."
+        rows="2"
+        onkeydown="handleKey(event)"
+      ></textarea>
+      <button id="send-btn" onclick="sendQuestion()">Ask</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>Legal-Ease &copy; 2025 — Not legal advice.</p>
+  </footer>
+
+  <script src="../scripts/ai-qa.js"></script>
+</body>
+</html>

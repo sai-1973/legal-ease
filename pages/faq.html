@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Legal FAQs — Legal-Ease</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/faq.css" />
+</head>
+<body>
+
+  <header>
+    <h1><a href="../index.html" style="color:white;text-decoration:none">Legal-Ease</a></h1>
+    <nav>
+      <a href="faq.html">Legal FAQs</a>
+      <a href="draft-generator.html">Draft a Document</a>
+    </nav>
+  </header>
+
+  <main class="faq-container">
+    <h2 class="faq-title">Legal FAQs</h2>
+    <p class="faq-subtitle">Common legal questions answered in plain language.</p>
+
+    <input
+      type="text"
+      id="search-input"
+      placeholder="Search a question — e.g. FIR, bail, RTI..."
+      class="search-box"
+    />
+
+    <div class="category-filters">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="police">Police &amp; FIR</button>
+      <button class="filter-btn" data-category="rights">Rights</button>
+      <button class="filter-btn" data-category="court">Court</button>
+      <button class="filter-btn" data-category="rti">RTI</button>
+    </div>
+
+    <div id="faq-list"></div>
+    <p id="no-results" style="display:none; color:#888; text-align:center; margin-top:32px;">
+      No results found. Try a different keyword.
+    </p>
+  </main>
+
+  <footer>
+    <p>Legal-Ease &copy; 2025 — Not legal advice.</p>
+  </footer>
+
+  <script src="../scripts/faq.js"></script>
+</body>
+</html>

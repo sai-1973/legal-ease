@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Draft Generator — Legal-Ease</title>
+  <link rel="stylesheet" href="../styles/main.css" />
+  <link rel="stylesheet" href="../styles/draft.css" />
+</head>
+<body>
+
+  <header>
+    <h1><a href="../index.html" style="color:white;text-decoration:none">Legal-Ease</a></h1>
+    <nav>
+      <a href="faq.html">Legal FAQs</a>
+      <a href="draft-generator.html">Draft a Document</a>
+    </nav>
+  </header>
+
+  <main class="draft-container">
+    <h2 class="draft-title">Document Draft Generator</h2>
+    <p class="draft-subtitle">Fill in the details below and get a ready-to-use legal draft.</p>
+
+    <div class="doc-type-selector">
+      <button class="doc-type-btn active" data-type="fir">FIR Draft</button>
+      <button class="doc-type-btn" data-type="complaint">Police Complaint</button>
+      <button class="doc-type-btn" data-type="rti">RTI Application</button>
+    </div>
+
+    <div class="form-and-preview">
+
+      <form id="draft-form">
+
+        <div id="fir-fields">
+          <div class="form-group">
+            <label>Your full name</label>
+            <input type="text" id="fir-name" placeholder="e.g. Ramesh Kumar" />
+          </div>
+          <div class="form-group">
+            <label>Your address</label>
+            <textarea id="fir-address" rows="2" placeholder="House no., street, city, state"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Police station name</label>
+            <input type="text" id="fir-station" placeholder="e.g. Koramangala Police Station" />
+          </div>
+          <div class="form-group">
+            <label>Date of incident</label>
+            <input type="date" id="fir-date" />
+          </div>
+          <div class="form-group">
+            <label>Place of incident</label>
+            <input type="text" id="fir-place" placeholder="e.g. Near MG Road, Bengaluru" />
+          </div>
+          <div class="form-group">
+            <label>Describe what happened</label>
+            <textarea id="fir-incident" rows="4" placeholder="Describe the incident clearly — who, what, when, where..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>Name of accused (if known)</label>
+            <input type="text" id="fir-accused" placeholder="e.g. Unknown / John Doe" />
+          </div>
+        </div>
+
+        <div id="complaint-fields" style="display:none">
+          <div class="form-group">
+            <label>Your full name</label>
+            <input type="text" id="c-name" placeholder="e.g. Priya Sharma" />
+          </div>
+          <div class="form-group">
+            <label>Your address</label>
+            <textarea id="c-address" rows="2" placeholder="House no., street, city, state"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Name of person you are complaining against</label>
+            <input type="text" id="c-against" placeholder="e.g. Suresh Landlord / Unknown" />
+          </div>
+          <div class="form-group">
+            <label>Nature of complaint</label>
+            <input type="text" id="c-nature" placeholder="e.g. Harassment, Fraud, Trespass" />
+          </div>
+          <div class="form-group">
+            <label>Date of incident</label>
+            <input type="date" id="c-date" />
+          </div>
+          <div class="form-group">
+            <label>Full description of the complaint</label>
+            <textarea id="c-desc" rows="4" placeholder="Describe the issue in detail..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>What relief/action are you seeking?</label>
+            <input type="text" id="c-relief" placeholder="e.g. Arrest of the accused, stop harassment" />
+          </div>
+        </div>
+
+        <div id="rti-fields" style="display:none">
+          <div class="form-group">
+            <label>Your full name</label>
+            <input type="text" id="r-name" placeholder="e.g. Anita Desai" />
+          </div>
+          <div class="form-group">
+            <label>Your address</label>
+            <textarea id="r-address" rows="2" placeholder="House no., street, city, state"></textarea>
+          </div>
+          <div class="form-group">
+            <label>Department / Public authority</label>
+            <input type="text" id="r-dept" placeholder="e.g. Municipal Corporation of Delhi" />
+          </div>
+          <div class="form-group">
+            <label>Information you are requesting</label>
+            <textarea id="r-info" rows="3" placeholder="Be specific — e.g. Details of road repair work on MG Road from Jan–Mar 2024, including total cost and contractor name." /></textarea>
+          </div>
+          <div class="form-group">
+            <label>Time period of information</label>
+            <input type="text" id="r-period" placeholder="e.g. January 2024 to March 2024" />
+          </div>
+        </div>
+
+        <button type="button" id="generate-btn" class="generate-btn">Generate Draft</button>
+      </form>
+
+      <div id="preview-box" style="display:none">
+        <div class="preview-header">
+          <h3>Your Draft</h3>
+          <div class="preview-actions">
+            <button onclick="copyDraft()">Copy</button>
+            <button onclick="printDraft()">Print</button>
+          </div>
+        </div>
+        <div id="draft-output" class="draft-output"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Legal-Ease &copy; 2025 — Not legal advice. Review your draft before submitting.</p>
+  </footer>
+
+  <script src="../scripts/draft.js"></script>
+</body>
+</html>
